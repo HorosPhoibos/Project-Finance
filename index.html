@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jov's Super App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header-section">
+            
+            <div class="header-left">
+                <div class="title-area">
+                    <h1>Halo, Jov! 👋</h1>
+                    <p>Command Center & Financial Hub</p>
+                </div>
+                
+                <div class="weather-dashboard">
+                    <div class="weather-hero">
+                        <div class="loc">📍 Jakarta (Lokal)</div>
+                        <div class="temp-big">32° <span style="font-size: 2rem;">🌤️</span></div>
+                        <div class="desc">Cerah Berawan</div>
+                    </div>
+                    
+                    <div class="weather-sub-grid">
+                        <div class="weather-sub">
+                            <div class="loc">Bekasi</div>
+                            <div class="temp-small">31°C ⛈️</div>
+                        </div>
+                        <div class="weather-sub">
+                            <div class="loc">Bogor</div>
+                            <div class="temp-small">26°C 🌧️</div>
+                        </div>
+                        <div class="weather-sub">
+                            <div class="loc">Tangerang</div>
+                            <div class="temp-small">30°C ☁️</div>
+                        </div>
+                        <div class="weather-sub">
+                            <div class="loc">Depok</div>
+                            <div class="temp-small">29°C 🌦️</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div id="clock" class="clock-display">00:00:00</div>
+                
+                <div class="quick-status">
+                    <h3>⚡ ACTIVE OPS</h3>
+                    <ul>
+                        <li><span class="icon">🚚</span> <b>Fleet:</b> 1 Active / 1 Idle</li>
+                        <li><span class="icon">🏢</span> <b>Nexia:</b> Rajawali Otomotif</li>
+                        <li><span class="icon">🎯</span> <b>Target:</b> Rp 150k/day</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card timer-card">
+            <h2 style="color: #64748b; font-size: 1rem; text-transform: uppercase;">Status Waktu Kerja</h2>
+            <div id="countdown" class="timer-display">Menghitung...</div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Market Radar</h2>
+            <div class="chart-grid">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                    { "symbol": "IDX:COMPOSITE", "width": "100%", "height": "100%", "locale": "en", "dateRange": "1M", "colorTheme": "light", "isTransparent": true, "autosize": true, "largeChartUrl": "" }
+                    </script>
+                </div>
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                    { "symbol": "BINANCE:BTCUSDT", "width": "100%", "height": "100%", "locale": "en", "dateRange": "1M", "colorTheme": "light", "isTransparent": true, "autosize": true, "largeChartUrl": "" }
+                    </script>
+                </div>
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                    { "symbol": "FX_IDC:USDIDR", "width": "100%", "height": "100%", "locale": "en", "dateRange": "1M", "colorTheme": "light", "isTransparent": true, "autosize": true, "largeChartUrl": "" }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 IDX Top Volume</h2>
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+                { "width": "100%", "height": 300, "defaultColumn": "overview", "defaultScreen": "top_gainers", "market": "indonesia", "showToolbar": true, "colorTheme": "light", "locale": "en" }
+                </script>
+            </div>
+        </div>
+
+        <div class="grid-2col">
+            <div class="card">
+                <h2>🚚 @artandobot Fleet</h2>
+                <iframe src="https://maps.google.com/maps?q=Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border-radius:12px; border:0; margin-bottom:15px;"></iframe>
+                
+                <label style="font-size: 0.9rem; color: #64748b; font-weight: 600;">Input Daily Net Profit</label>
+                <div style="display: flex; gap: 10px; margin-top: 8px;">
+                    <input type="number" id="lalamoveFare" placeholder="Rp 150.000" class="modern-input">
+                    <button onclick="sendToTelegram()" class="aegean-btn">Kirim Laporan</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🗓️ Daily Tasks</h2>
+                <table class="modern-table">
+                    <tr><td><input type="checkbox" class="aegean-check"></td><td>05:00</td><td>Wake Up</td></tr>
+                    <tr><td><input type="checkbox" class="aegean-check"></td><td>07:00</td><td>Check Fleet Routes</td></tr>
+                    <tr><td><input type="checkbox" class="aegean-check"></td><td>09:00</td><td>Nexia (Technical Assistant)</td></tr>
+                    <tr><td><input type="checkbox" class="aegean-check"></td><td>13:00</td><td>Audit: Rajawali Otomotif</td></tr>
+                    <tr><td><input type="checkbox" class="aegean-check"></td><td>19:00</td><td>Record Vocal Cover</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="grid-2col">
+            <div class="card">
+                <h2>⚽ Man Utd Live</h2>
+                <table class="modern-table" id="mufcTable">
+                    <tr><td>Mengambil data live...</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>📰 Global Hot News</h2>
+                <div id="newsContainer" class="news-scroll">
+                    <p>Mengambil berita terkini...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

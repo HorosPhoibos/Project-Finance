@@ -1,0 +1,147 @@
+* { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body {
+    background-color: #F0F4F8; 
+    color: #1E293B; 
+    margin: 0;
+    padding: 20px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+/* Header Layout Baru */
+.header-section {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.header-left { flex: 2; }
+.header-right { 
+    flex: 1; 
+    text-align: right; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-end; 
+    gap: 15px; 
+}
+
+.title-area h1 { margin: 0; font-weight: 800; font-size: 2.2rem; color: #0F172A; }
+.title-area p { margin: 5px 0 20px 0; color: #64748b; font-size: 1rem; }
+
+/* WIDGET CUACA RAKSASA & GRID */
+.weather-dashboard { display: flex; gap: 15px; flex-wrap: wrap; }
+
+.weather-hero {
+    background: linear-gradient(135deg, #1E56A0 0%, #3B82F6 100%); 
+    color: white;
+    padding: 20px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(30, 86, 160, 0.3);
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.weather-hero .loc { font-size: 1rem; opacity: 0.9; font-weight: 600; margin-bottom: 5px; }
+.weather-hero .temp-big { font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 5px; }
+.weather-hero .desc { font-size: 1.1rem; font-weight: 600; }
+
+.weather-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Kolom */
+    gap: 10px;
+}
+
+.weather-sub {
+    background: #FFFFFF;
+    padding: 12px 18px;
+    border-radius: 15px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    min-width: 130px;
+}
+.weather-sub .loc { font-size: 0.75rem; color: #64748b; font-weight: 700; text-transform: uppercase; }
+.weather-sub .temp-small { font-size: 1.1rem; font-weight: 800; color: #1E293B; margin-top: 2px;}
+
+/* Jam Lokal & Quick Status */
+.clock-display { font-size: 2.5rem; font-weight: 800; color: #1E56A0; }
+
+.quick-status {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 15px;
+    padding: 15px 20px;
+    text-align: left;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 260px;
+}
+.quick-status h3 { margin: 0 0 10px 0; font-size: 0.9rem; color: #1E56A0; font-weight: 800; }
+.quick-status ul { list-style: none; padding: 0; margin: 0; }
+.quick-status li { 
+    font-size: 0.85rem; color: #1E293B; margin-bottom: 8px; font-weight: 600; 
+    border-bottom: 1px dashed #F1F5F9; padding-bottom: 5px; 
+}
+.quick-status li:last-child { border: none; margin: 0; padding: 0; }
+.quick-status .icon { display: inline-block; width: 22px; font-size: 1rem; }
+
+/* Cards bergaya Bersih */
+.card {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 25px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); 
+}
+.card h2 { margin-top: 0; font-size: 1.2rem; font-weight: 800; margin-bottom: 15px; color: #0F172A; }
+
+/* Auto Timer */
+.timer-card { text-align: center; border: 2px solid #1E56A0; background: #F8FAFC; }
+.timer-display { font-size: 3rem; font-weight: 800; margin: 10px 0; letter-spacing: 1px; }
+
+/* Grids */
+.chart-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+.grid-2col { display: grid; grid-template-columns: 1fr; gap: 25px; }
+@media (min-width: 768px) {
+    .chart-grid { grid-template-columns: repeat(3, 1fr); height: 250px; }
+    .grid-2col { grid-template-columns: 1fr 1fr; }
+}
+
+/* Inputs & Buttons Aegean Blue */
+.modern-input {
+    flex: 1; padding: 12px 15px; border-radius: 12px;
+    border: 2px solid #E2E8F0; background: #F8FAFC;
+    color: #1E293B; font-size: 1rem; outline: none; font-weight: 600;
+}
+.modern-input:focus { border-color: #1E56A0; background: #FFFFFF; }
+
+.aegean-btn {
+    background-color: #1E56A0; color: white;
+    border: none; border-radius: 12px;
+    padding: 12px 24px; font-weight: 600; font-size: 1rem;
+    cursor: pointer; transition: background-color 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(30, 86, 160, 0.3);
+}
+.aegean-btn:hover { background-color: #153E75; }
+
+/* Tables */
+.modern-table { width: 100%; border-collapse: collapse; }
+.modern-table td { padding: 12px 8px; border-bottom: 1px solid #F1F5F9; font-size: 0.95rem; color: #334155; font-weight: 600;}
+.aegean-check { width: 20px; height: 20px; accent-color: #1E56A0; cursor: pointer; }
+.result-win td { color: #1E56A0; font-weight: 800; }
+
+/* News Scroll */
+.news-scroll { height: 250px; overflow-y: auto; padding-right: 10px; }
+.news-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #F1F5F9; }
+.news-item a { color: #1E293B; text-decoration: none; font-weight: 700; transition: color 0.2s; }
+.news-item a:hover { color: #1E56A0; }
+.news-date { font-size: 0.85rem; color: #64748b; margin-top: 5px; font-weight: 600;}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
